@@ -39,7 +39,6 @@ public class Producto implements Serializable {
     @JoinColumn(name="id_categoria")
     Categoria categoria;
     
-    
     public Producto() {
     }
 

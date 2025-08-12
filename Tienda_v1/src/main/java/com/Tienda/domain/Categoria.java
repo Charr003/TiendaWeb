@@ -32,7 +32,7 @@ public class Categoria implements Serializable {
     private boolean activo;
     
     
-    @OneToMany // DA ERROR
+    @OneToMany // One to many y many to one
     @JoinColumn(name="id_categoria")
     List<Producto> productos;
     

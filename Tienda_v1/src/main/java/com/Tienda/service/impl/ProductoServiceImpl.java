@@ -17,6 +17,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
@@ -52,6 +54,23 @@ public class ProductoServiceImpl implements ProductoService {
         productoDao.delete(producto);
     }
     
+    @Override // query 1
+    @Transactional(readOnly=true)
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup){
+        return productoDao.findByPrecioBetweenOrderByDescripcion( precioInf,  precioSup);
+    }
     
+    @Override // query 2
+    @Transactional(readOnly=true)
+    public List<Producto> metodoJPQL(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup){
+        return productoDao.metodoJPQL( precioInf,  precioSup);
+    }
+    
+    @Override // query 3
+    @Transactional(readOnly=true)
+    public List<Producto> metodoNativo(@Param("precioInf") double precioInf, @Param("precioSup") double precioSup){
+        return productoDao.metodoNativo( precioInf,  precioSup);
+    }
     
 }
+    

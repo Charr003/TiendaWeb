@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
-package com.tienda.service.impl;
+package com.Tienda.service.impl;
 
 /**
  *
@@ -51,7 +51,6 @@ public class CategoriaServiceImpl implements CategoriaService {
     public void delete(Categoria categoria){
         categoriaDao.delete(categoria);
     }
-    
     
     
 }
