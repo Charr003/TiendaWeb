@@ -1,13 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+package com.tienda.service.impl; 
 
-package com.Tienda.service.impl; 
-import com.Tienda.dao.UsuarioDao; 
-import com.Tienda.domain.Rol; 
-import com.Tienda.domain.Usuario; 
-import com.Tienda.service.UsuarioDetailsService; 
+import com.tienda.dao.UsuarioDao; 
+import com.tienda.domain.Rol; 
+import com.tienda.domain.Usuario; 
+import com.tienda.service.UsuarioDetailsService; 
 import jakarta.servlet.http.HttpSession; 
 import java.util.ArrayList; 
 import org.springframework.beans.factory.annotation.Autowired; 
@@ -21,8 +17,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional; 
  
 @Service("userDetailsService") 
-public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, 
-UserDetailsService { 
+public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDetailsService { 
  
     @Autowired 
     private UsuarioDao usuarioDao; 
@@ -32,7 +27,6 @@ UserDetailsService {
     @Override 
     @Transactional(readOnly = true) 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { 
-
         //Se busca el usuario que tiene el username pasado por parámetro... 
         Usuario usuario = usuarioDao.findByUsername(username); 
          
@@ -42,11 +36,10 @@ UserDetailsService {
         } 
          
         //Si estamos acá es porque si se recuperó un usuario... 
-        session.removeAttribute("usuarioImagen"); 
+  
         session.setAttribute("usuarioImagen", usuario.getRutaImagen()); 
          
-        //Se van a recuperar los roles del usuario y se crean los roles ya como seguridad de Spring
-         
+        //Se van a recuperar los roles del usuario y se crean los roles ya como seguridad de Spring 
         var roles = new ArrayList<GrantedAuthority>(); 
         for (Rol rol : usuario.getRoles()) { 
            roles.add(new SimpleGrantedAuthority(rol.getNombre())); 
@@ -55,4 +48,4 @@ UserDetailsService {
         return new User(usuario.getUsername(),usuario.getPassword(),roles); 
     } 
  
-}
+} 

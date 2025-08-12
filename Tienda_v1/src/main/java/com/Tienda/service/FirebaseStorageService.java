@@ -1,11 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
-
 package com.tienda.service;
 
 import org.springframework.web.multipart.MultipartFile;
+
 
 
 public interface FirebaseStorageService {
@@ -22,6 +18,5 @@ public interface FirebaseStorageService {
     final String rutaJsonFile = "firebase";
     
     //El nombre del archivo Json
-    final String archivoJsonFile = "techshop-7e20e-firebase-adminsdk-spis7-b3f2f34a29";
+    final String archivoJsonFile = "techshop-7e20e firebase-adminsdk-spis7-b3f2f34a29.json";
 }
-

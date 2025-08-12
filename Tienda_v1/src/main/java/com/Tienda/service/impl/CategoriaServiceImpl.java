@@ -1,14 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
-package com.Tienda.service.impl;
-
-/**
- *
- * @author XPC
- */
+package com.tienda.service.impl;
 
 import com.tienda.dao.CategoriaDao;
 import com.tienda.domain.Categoria;
@@ -34,7 +24,7 @@ public class CategoriaServiceImpl implements CategoriaService {
         return lista;
     }
     
-    @Override
+  @Override
     @Transactional(readOnly = true)
     public Categoria getCategoria(Categoria categoria) {
         return categoriaDao.findById(categoria.getIdCategoria()).orElse(null);
@@ -50,7 +40,5 @@ public class CategoriaServiceImpl implements CategoriaService {
     @Transactional
     public void delete(Categoria categoria){
         categoriaDao.delete(categoria);
-    }
-    
-    
 }
+}   

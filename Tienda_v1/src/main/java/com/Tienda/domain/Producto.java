@@ -1,30 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package com.tienda.domain;
-
-/**
- *
- * @author XPC
- */
 
 import jakarta.persistence.*;
 import java.io.Serializable;
 import lombok.Data;
 import com.tienda.domain.Categoria;
-//import javax.persistence.ManyToOne;
-//import javax.persistence.JoinColumn;
+
 
 @Data
 @Entity
 @Table(name="producto")
-public class Producto implements Serializable {
+
+public class Producto {
     
-    private static final long serialVersionUID = 1L;
+    private static final long SerialVersionUID = 1L; 
     
-    @Id
+    @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name="id_producto")
     private Long idProducto;
@@ -33,11 +23,13 @@ public class Producto implements Serializable {
     private boolean activo;
     private String detalle;
     private int existencias;
-    private double precio;
+    private double precio; 
     
+   
     @ManyToOne
     @JoinColumn(name="id_categoria")
     Categoria categoria;
+    
     
     public Producto() {
     }
@@ -45,5 +37,5 @@ public class Producto implements Serializable {
     public Producto(String producto, boolean activo) {
         this.descripcion = producto;
         this.activo = activo;
-    }
+   }   
 }

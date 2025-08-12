@@ -4,11 +4,11 @@
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.0.RELEASE/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.0.RELEASE/maven-plugin/build-image.html)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.5.0.RELEASE/reference/using/devtools.html)
-* [Spring Web](https://docs.spring.io/spring-boot/3.5.0.RELEASE/reference/web/servlet.html)
-* [Thymeleaf](https://docs.spring.io/spring-boot/3.5.0.RELEASE/reference/web/servlet.html#web.servlet.spring-mvc.template-engines)
+* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.5.0/maven-plugin)
+* [Create an OCI image](https://docs.spring.io/spring-boot/3.5.0/maven-plugin/build-image.html)
+* [Spring Boot DevTools](https://docs.spring.io/spring-boot/3.5.0/reference/using/devtools.html)
+* [Spring Web](https://docs.spring.io/spring-boot/3.5.0/reference/web/servlet.html)
+* [Thymeleaf](https://docs.spring.io/spring-boot/3.5.0/reference/web/servlet.html#web.servlet.spring-mvc.template-engines)
 
 ### Guides
 The following guides illustrate how to use some features concretely:
