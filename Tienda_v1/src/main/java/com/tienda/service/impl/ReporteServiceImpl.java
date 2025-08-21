@@ -46,12 +46,10 @@ public class ReporteServiceImpl implements ReporteService {
                 estilo = "attachment; ";
             }
 
-            //La ruta dentro de "default package"
             String reportePath = "reportes";
-            //En salida quedarà el reporte ya generado...
+            
             ByteArrayOutputStream salida = new ByteArrayOutputStream();
 
-            //Se define el lugar y acceso al archivo .jasper
             ClassPathResource fuente
                     = new ClassPathResource(
                             reportePath
@@ -59,11 +57,10 @@ public class ReporteServiceImpl implements ReporteService {
                             + reporte
                             + ".jasper");            
 
-            //Un objeto para leer efectivamente el reporte
             InputStream elReporte = fuente.getInputStream();
 
-            //Se crea el reporte como tal
-            var reporteJasper
+
+            var reporteJasper /// Crea el reporte
                     = JasperFillManager
                             .fillReport(
                                     elReporte,

@@ -27,24 +27,20 @@ public class UsuarioDetailsServiceImpl implements UsuarioDetailsService, UserDet
     @Override 
     @Transactional(readOnly = true) 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { 
-        //Se busca el usuario que tiene el username pasado por parámetro... 
+        
         Usuario usuario = usuarioDao.findByUsername(username); 
-         
-        //Se valida si se recuperó un usuario / sino lanza un error 
+       
         if (usuario==null) { 
             throw new UsernameNotFoundException(username); 
         } 
-         
-        //Si estamos acá es porque si se recuperó un usuario... 
   
         session.setAttribute("usuarioImagen", usuario.getRutaImagen()); 
          
-        //Se van a recuperar los roles del usuario y se crean los roles ya como seguridad de Spring 
         var roles = new ArrayList<GrantedAuthority>(); 
         for (Rol rol : usuario.getRoles()) { 
            roles.add(new SimpleGrantedAuthority(rol.getNombre())); 
         } 
-        //Se retorna un User (de tipo UserDetails) 
+
         return new User(usuario.getUsername(),usuario.getPassword(),roles); 
     } 
  

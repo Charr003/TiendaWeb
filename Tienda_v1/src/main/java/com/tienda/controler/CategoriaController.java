@@ -17,8 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 
 
 @Controller
-@Slf4j //manejar solicitudes de HTTP
-@RequestMapping("/categoria") //ruta 
+@Slf4j //manejo de solicitudes  HTTP
+@RequestMapping("/categoria") 
 public class CategoriaController {
     
     @Autowired
@@ -27,7 +27,8 @@ public class CategoriaController {
     @GetMapping("/listado")
     public String inicio(Model model) {
         var categorias = categoriaService.getCategorias(false);
-        model.addAttribute("categorias", categorias); //variable qe se pasa a la lista 
+        ///Esta variable se usa en lista con toda su informacion
+        model.addAttribute("categorias", categorias); 
         model.addAttribute("totalCategorias", categorias.size());
         return "/categoria/listado";
     }

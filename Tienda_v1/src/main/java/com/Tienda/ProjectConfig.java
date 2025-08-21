@@ -20,9 +20,9 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
-    /* Los siguientes métodos son para incorporar el tema de internacionalización en el proyecto */
+    /// internacionalización en el proyecto 
     
-    /* localeResolver se utiliza para crear una sesión de cambio de idioma*/
+    /// localeResolver se utiliza para crear una sesión y cambiar lenguaje
     @Bean
     public LocaleResolver localeResolver() {
         var slr = new SessionLocaleResolver();
@@ -32,7 +32,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         return slr;
     }
 
-    /* localeChangeInterceptor se utiliza para crear un interceptor de cambio de idioma*/
+    ///interceptor de cambio de idioma
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
         var lci = new LocaleChangeInterceptor();
@@ -45,7 +45,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         registro.addInterceptor(localeChangeInterceptor());
     }
 
-    //Bean para poder acceder a los Messages.properties en código...
+    ///Bean para poder acceder a los .properties
     @Bean("messageSource")
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource= new ResourceBundleMessageSource();
@@ -54,7 +54,7 @@ public class ProjectConfig implements WebMvcConfigurer {
         return messageSource;
     }
     
-    /* Los siguiente métodos son para implementar el tema de seguridad dentro del proyecto */
+    /// Seguridad
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/").setViewName("index");

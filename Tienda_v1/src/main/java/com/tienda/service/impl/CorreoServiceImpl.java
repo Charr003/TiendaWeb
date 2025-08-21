@@ -18,9 +18,9 @@ public class CorreoServiceImpl implements CorreoService{
     
     @Override
     public void enviarCorreoHtml(
-            String para, //A quien se le va a enviar el correo
-            String asunto, //Titulo principal
-            String contenidoHtml) //Cuerpo del correo
+            String para, 
+            String asunto, 
+            String contenidoHtml) 
             throws MessagingException{
     
         MimeMessage message = mailSender.createMimeMessage();
@@ -29,8 +29,8 @@ public class CorreoServiceImpl implements CorreoService{
                         true);
         helper.setTo(para);
         helper.setSubject(asunto);
-        helper.setText(contenidoHtml,true);//setteamos el valor o el texto 
-        mailSender.send(message);// enviar el correo
+        helper.setText(contenidoHtml,true);
+        mailSender.send(message);
         
     }
 

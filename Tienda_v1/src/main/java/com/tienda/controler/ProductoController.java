@@ -18,8 +18,8 @@ import com.tienda.service.CategoriaService;
 
 
 @Controller
-@Slf4j //manejar solicitudes de HTTP
-@RequestMapping("/producto") //ruta 
+@Slf4j 
+@RequestMapping("/producto") 
 public class ProductoController {
     
     @Autowired
@@ -32,7 +32,8 @@ public class ProductoController {
         var productos = productoService.getProductos(false);
         var categorias = categoriaService.getCategorias(false); 
         model.addAttribute("categorias", categorias);
-        model.addAttribute("productos", productos); //variable qe se pasa a la lista 
+        //Variable que se utiliza en la lista
+        model.addAttribute("productos", productos); 
         model.addAttribute("totalProductos", productos.size());
         return "/producto/listado";
     }

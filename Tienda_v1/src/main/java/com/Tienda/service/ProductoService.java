@@ -9,7 +9,7 @@ import org.springframework.data.repository.query.Param;
 
 
 public interface ProductoService {
-    //asigna el metodo para despues implementarlo en el serviceImpl (Read)
+    
     public List<Producto> getProductos(boolean activos);
     
     public Producto getProducto(Producto producto);
